@@ -27,11 +27,15 @@ Date: $date
 ## 3. Action Items
 - [ ] 
 
+## 4. Universal Lessons
+*(General principles, not just specific fixes. e.g., "Safety First" instead of "Don't delete main.dart")*
+- 
+
 ## Updating Rules & Principles
-*Check if any updates are needed for:*
-- Development Principles
-- Development Workflow
-- Safety Rules
+*(Map lessons to specific Rule Files)*
+- **Workflow**:
+- **Safety**:
+- **Principles**:
 "@
 
 if (-not (Test-Path $retroPath)) {

@@ -1,4 +1,4 @@
-﻿---
+---
 trigger: always_on
 glob: "**/*"
 description: Development principles and best practices for code quality, workflow, architecture, and testing.
@@ -73,6 +73,7 @@ description: Development principles and best practices for code quality, workflo
 ## 6. Dependency Management
 - **Versioning**: Use **specific version numbers** (e.g., `1.2.3`) in `package.json` (remove `^` or `~` caret/tilde if strict stability is required, or follow project policy).
 - **Updates**: Do not update dependencies implicitly. Update explicitly and test.
+- **Selection**: Explicitly prefer **Stable / LTS** versions of libraries and tools over "Latest/Edge" versions to ensure stability and compatibility.
 
 ## 7. Working Log
 - **Activity Logging**: Always log what is being worked on.

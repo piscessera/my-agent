@@ -9,12 +9,12 @@ description: Standard development workflow steps from requirement to documentati
 Follow this structured workflow for every development task to ensure quality and consistency.
 
 ## Shortcode Usage
-- **Individual Steps**: You can execute any single step by using its shortcode (e.g., `/dev-req`).
-- **Chained Steps**: You can execute multiple steps in sequence by listing shortcodes separated by spaces (e.g., `/dev-req /dev-plan todolist with no database`).
+- **Individual Steps**: You can execute any single step by using its shortcode (e.g., /dev-req).
+- **Chained Steps**: You can execute multiple steps in sequence by listing shortcodes separated by spaces (e.g., /dev-req /dev-plan todolist with no database).
 - **Shortcodes**:
-  1. `/dev-req` (Steps 1-4: Requirement -> Analyze -> Task -> DoD)
-  2. `/dev-plan` (Step 5: Plan)
-  3. `/dev-go`  (Steps 6-9: Develop -> Test -> Doc -> Log)
+  1. /dev-req (Steps 1-4: Requirement -> Analyze -> Task -> DoD)
+  2. /dev-plan (Step 5: Plan)
+  3. /dev-go  (Steps 6-9: Develop -> Test -> Doc -> Log)
 
 ## 1. Requirement
 - **Goal**: Clearly understand what needs to be built or solved.
@@ -22,7 +22,7 @@ Follow this structured workflow for every development task to ensure quality and
   - Read and analyze the user request.
   - Ask clarifying questions if requirements are ambiguous.
   - Identify the core problem and the desired outcome.
-  - **Git Branch**: Create a new branch following the format: `feature/[running_number]-[req-summarize-meanful-naming]`.
+  - **Git Branch**: Create a new branch following the format: eature/[running_number]-[req-summarize-meanful-naming].
 
 ## 2. Analyze & Research & Design
 - **Goal**: Plan the solution before writing code.
@@ -58,6 +58,7 @@ Follow this structured workflow for every development task to ensure quality and
 - **Actions**:
   - Write code following the **Development Principles** (Code Quality, Git Workflow, Formatting).
   - Implement one sub-task at a time.
+  - **Continuous Analysis**: Run static analysis/linting tools frequently throughout the coding phase.
   - Commit often with meaningful messages.
 
 ## 7. Testing
@@ -66,13 +67,14 @@ Follow this structured workflow for every development task to ensure quality and
   - **Unit Testing**: Test individual functions/components.
   - **Integration Testing**: Test how components work together.
   - **Manual Verification**: Verify the critical path (happy flow) manually.
+  - **Runtime Verification**: Explicitly launch/run the application to verify it starts and functions correctly (not just builds).
   - **Validation**: Check against the **Acceptance Criteria**.
 
 ## 8. Documentation
 - **Goal**: Make the code easy to understand and use.
 - **Actions**:
   - Add inline comments for complex logic.
-  - Update `README.md` or other documentation files if features change.
+  - Update README.md or other documentation files if features change.
   - Document any new environment variables or setup steps.
 
 ## 9. Working Log
@@ -81,4 +83,5 @@ Follow this structured workflow for every development task to ensure quality and
   - Update the working log file continuously.
   - Use the template defined in **Development Principles**.
   - Record major decisions, blockers, and their resolutions.
-  - **Pull Request**: Create a Pull Request to `main` upon completion.
+  - **Visual Evidence**: For UI-related changes, attach a screenshot or video of the running feature.
+  - **Pull Request**: Create a Pull Request to main upon completion.
