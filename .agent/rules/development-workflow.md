@@ -1,6 +1,7 @@
-﻿---
+---
+last_updated: 2025-12-17
+version: 1.1.0
 trigger: always_on
-glob: "**/*"
 description: Standard development workflow steps from requirement to documentation.
 ---
 
@@ -9,12 +10,12 @@ description: Standard development workflow steps from requirement to documentati
 Follow this structured workflow for every development task to ensure quality and consistency.
 
 ## Shortcode Usage
-- **Individual Steps**: You can execute any single step by using its shortcode (e.g., /dev-req).
-- **Chained Steps**: You can execute multiple steps in sequence by listing shortcodes separated by spaces (e.g., /dev-req /dev-plan todolist with no database).
+- **Individual Steps**: You can execute any single step by using its shortcode (e.g., `/dev-req`).
+- **Chained Steps**: You can execute multiple steps in sequence by listing shortcodes separated by spaces (e.g., `/dev-req /dev-plan todolist with no database`).
 - **Shortcodes**:
-  1. /dev-req (Steps 1-4: Requirement -> Analyze -> Task -> DoD)
-  2. /dev-plan (Step 5: Plan)
-  3. /dev-go  (Steps 6-9: Develop -> Test -> Doc -> Log)
+  1. `/dev-req` (Steps 1-4: Requirement -> Analyze -> Task -> DoD)
+  2. `/dev-plan` (Step 5: Plan)
+  3. `/dev-go`  (Steps 6-9: Develop -> Test -> Doc -> Log)
 
 ## 1. Requirement
 - **Goal**: Clearly understand what needs to be built or solved.
@@ -22,12 +23,14 @@ Follow this structured workflow for every development task to ensure quality and
   - Read and analyze the user request.
   - Ask clarifying questions if requirements are ambiguous.
   - Identify the core problem and the desired outcome.
-  - **Git Branch**: Create a new branch following the format: eature/[running_number]-[req-summarize-meanful-naming].
+  - **GitHub Issue**: Title must follow Conventional Commits (e.g., feat: Home Screen with Calendar, feat(home): add font controls).
+  - **Git Branch**: Create a new branch following the format: `feature/[running_number]-[req-summarize-meanful-naming]`.
 
 ## 2. Analyze & Research & Design
 - **Goal**: Plan the solution before writing code.
 - **Actions**:
   - **Research**: Investigate necessary libraries, documentation, or existing patterns.
+  - **Verification**: If using external APIs, verify data availability and structure (via curl/fetch) *before* design.
   - **Analyze**: Consider potential edge cases and performance implications.
   - **Design**: 
     - Architecture: detailed component hierarchy, data flow, or API structure.
@@ -37,6 +40,8 @@ Follow this structured workflow for every development task to ensure quality and
 - **Goal**: Split the work into manageable, logical units.
 - **Actions**:
   - Create a list of small, focused sub-tasks.
+  - **Task File Naming**: If creating efficient task files, use format docs/tasks/task-[id]-[description].md.
+  - **Task File Content**: Must include sections for **Requirement**, **Analysis**, **Design**, **Research** (if applicable), and **Plan**.
   - Ensure each task is independent where possible.
   - Estimate the complexity of each task.
 
@@ -58,30 +63,29 @@ Follow this structured workflow for every development task to ensure quality and
 - **Actions**:
   - Write code following the **Development Principles** (Code Quality, Git Workflow, Formatting).
   - Implement one sub-task at a time.
-  - **Continuous Analysis**: Run static analysis/linting tools frequently throughout the coding phase.
   - Commit often with meaningful messages.
 
-## 7. Testing
-- **Goal**: Ensure the solution works as expected.
+## 7. Testing & Verification
+- **Goal**: Ensure the solution works as expected in the real world.
 - **Actions**:
   - **Unit Testing**: Test individual functions/components.
   - **Integration Testing**: Test how components work together.
   - **Manual Verification**: Verify the critical path (happy flow) manually.
-  - **Runtime Verification**: Explicitly launch/run the application to verify it starts and functions correctly (not just builds).
+  - **Runtime Verification**: **CRITICAL** - Ensure the application (or feature) launches and runs successfully. A successful build is NOT enough.
+  - **Continuous Analysis**: Run static analysis/linter tools frequently (not just at the end) to catch deprecated code or errors early.
   - **Validation**: Check against the **Acceptance Criteria**.
 
 ## 8. Documentation
 - **Goal**: Make the code easy to understand and use.
 - **Actions**:
   - Add inline comments for complex logic.
-  - Update README.md or other documentation files if features change.
+  - Update `README.md` or other documentation files if features change.
   - Document any new environment variables or setup steps.
 
-## 9. Working Log
-- **Goal**: Track progress and decisions.
+## 9. Working Log & Review
+- **Goal**: Track progress and prepare for review.
 - **Actions**:
   - Update the working log file continuously.
   - Use the template defined in **Development Principles**.
-  - Record major decisions, blockers, and their resolutions.
-  - **Visual Evidence**: For UI-related changes, attach a screenshot or video of the running feature.
-  - **Pull Request**: Create a Pull Request to main upon completion.
+  - **Visual Evidence**: Capture screenshots or videos of the running feature (especially for UI).
+  - **Pull Request**: Create a Pull Request to `main` upon completion, attaching the Visual Evidence.
