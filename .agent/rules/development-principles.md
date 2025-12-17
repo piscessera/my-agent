@@ -1,6 +1,7 @@
 ---
+last_updated: 2025-12-17
+version: 1.1.0
 trigger: always_on
-glob: "**/*"
 description: Development principles and best practices for code quality, workflow, architecture, and testing.
 ---
 
@@ -57,25 +58,31 @@ description: Development principles and best practices for code quality, workflo
     - **Fields**: Use standardized field names.
     - **Versioning**: Include build version or commit hash in logs.
 
-## 4. Testing
+## 4. UI/UX Resilience
+- **Fail Gracefully**: UI should handle missing data (e.g., API failures, null values) without crashing or showing technical placeholders (like "$Paid").
+- **Empty States**: Always design for empty states (e.g., "No games found") rather than leaving a blank screen.
+- **Feedback**: Provide immediate visual feedback for user actions (loading spinners, success/error toasts).
+
+## 5. Testing
 - **Pre-Completion Checklist**: Before marking a task as done, ensure:
   1. **Build**: The application builds successfully without errors.
   2. **Critical Path**: The "happy flow" (critical path) is tested and working.
   3. **Acceptance Criteria**: The feature meets all defined acceptance criteria for the task.
+  4. **Responsive Check**: Verify UI behavior on different screen sizes (mobile, tablet, desktop) to ensure no overflows or layout breaks.
 
-## 5. Error Handling
+## 6. Error Handling
 - **No Empty Catches**: Never swallow exceptions with an empty `catch` block.
 - **Logging**: Always log the error (with stack trace for system errors) or propagate it to the caller.
 - **User Feedback**:
   - Show clear, friendly messages to the user in the UI.
   - **Never** expose raw system errors or stack traces to the user (e.g., in alerts or page elements).
 
-## 6. Dependency Management
+## 7. Dependency Management
 - **Versioning**: Use **specific version numbers** (e.g., `1.2.3`) in `package.json` (remove `^` or `~` caret/tilde if strict stability is required, or follow project policy).
+- **Stability**: Explicitly prefer **Stable** or **LTS** versions of libraries. Avoid "latest", "beta", or "edge" unless absolutely required for a specific feature.
 - **Updates**: Do not update dependencies implicitly. Update explicitly and test.
-- **Selection**: Explicitly prefer **Stable / LTS** versions of libraries and tools over "Latest/Edge" versions to ensure stability and compatibility.
 
-## 7. Working Log
+## 8. Working Log
 - **Activity Logging**: Always log what is being worked on.
 - **Template**: Keep it concise but informative.
   - Example:
