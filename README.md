@@ -25,7 +25,7 @@ This repository contains the configuration, rules, and workflows for my AI Agent
 
 ## 🚀 Workflows (Shortcodes)
 
-Use these shortcodes to trigger agent behaviors and automate steps.
+Use these shortcodes to trigger agent behaviors and automate steps. You can also **chain** them (e.g., `/dev-req /dev-plan`).
 
 ### Setup & Ops
 | Command | Description |
@@ -46,6 +46,7 @@ Use these shortcodes to trigger agent behaviors and automate steps.
 | :--- | :--- |
 | **`/retro`** | **Retrospective**. Creates a template to reflect on a sprint or task. |
 | **`/learn`** | **Learn & Evolve**. Reads past retrospectives to propose updates to these rules. |
+| **`/learn-agent`** | **Cross-Pollination**. Learns rules and best practices from other agent workspaces (Local/GitHub). |
 
 ## 📜 Core Rules
 

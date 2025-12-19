@@ -1,6 +1,7 @@
 ﻿---
-trigger: always_on
-glob: "**/*"
+last_updated: 2025-12-12
+version: 1.0.0
+trigger: model_decision
 description: Recommended workspace structure and file organization guidelines.
 ---
 

@@ -1,4 +1,6 @@
 ﻿---
+last_updated: 2025-12-12
+version: 1.0.0
 trigger: always_on
 description: Safety rules and guidelines for agent operations.
 ---
@@ -33,3 +35,4 @@ pm update, pip upgrade) without specifying the specific package to update.
 
 ## Scaffolding & Initialization
 - **Scaffolding Safety**: Before running any initialization or scaffolding command (e.g., create, init), **check for existing critical files** (entry points, configs) to prevent accidental overwrites.
+
