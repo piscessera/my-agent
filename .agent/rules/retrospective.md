@@ -1,4 +1,6 @@
 ﻿---
+last_updated: 2025-12-12
+version: 1.0.0
 trigger: model_decision
 description: Template and guidelines for conducting retrospectives to improve processes and rules.
 ---
